@@ -12,11 +12,11 @@ class Equipo extends Model
     // Definir las opciones permitidas para el campo 'estado'
     public static $estadosPermitidos = ['Prestado', 'Disponible', 'Perdido'];
 
-    //Funcion para definir las relaciones con los otros modelos
+    protected $fillable = ['numero_serie', 'tipo_equipo', 'fecha_entrega', 'estado'];
+
+    // Relación con Transacciones (uno a muchos)
     public function transacciones() {
-
-    return $this->hasMany(Transaccion::class);
-
+        return $this->hasMany('App\Models\Transaccion');
     }
 }
 

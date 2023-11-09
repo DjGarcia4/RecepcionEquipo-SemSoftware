@@ -9,15 +9,17 @@ class Transaccion extends Model
 {
     use HasFactory;
 
-    //Funcion para definir las relaciones con los otros modelos
-    public function usuario() {
+    protected $fillable = ['usuario_id', 'equipo_id', 'accion'];
 
-    return $this->belongsTo(Usuario::class);
-
-    }
-
+    // Relación con Equipos (muchos a uno)
     public function equipo()
     {
-        return $this->belongsTo(Equipo::class);
+        return $this->belongsTo('App\Models\Equipo');
+    }
+
+    // Relación con Usuarios (muchos a uno)
+    public function usuario()
+    {
+        return $this->belongsTo('App\Models\Usuario');
     }
 }

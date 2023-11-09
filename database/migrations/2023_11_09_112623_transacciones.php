@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('transacciones', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('usuario_id')->constrained(); // Relación con la tabla de usuarios
-            $table->foreignId('equipo_id')->constrained();  // Relación con la tabla de equipos
+            $table->foreignId('usuario_id')->constrained('usuarios'); // Relación con la tabla de usuarios
+            $table->foreignId('equipo_id')->constrained('equipos');  // Relación con la tabla de equipos
             $table->string('accion'); // Puede ser 'entrega' o 'recepcion'
             $table->timestamps();
         });

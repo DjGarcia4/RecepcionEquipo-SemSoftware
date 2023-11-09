@@ -20,7 +20,7 @@
         <label for="fecha_entrega">Fecha de Entrega:</label>
         <input type="date" name="fecha_entrega" required>
     
-        <<label for="estado">Estado:</label>
+        <label for="estado">Estado:</label>
         <select name="estado" id="estado">
             @foreach(\App\Models\Equipo::$estadosPermitidos as $opcion)
                 <option value="{{ $opcion }}" {{ old('estado') == $opcion ? 'selected' : '' }}>

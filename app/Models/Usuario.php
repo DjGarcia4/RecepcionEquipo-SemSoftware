@@ -9,10 +9,11 @@ class Usuario extends Model
 {
     use HasFactory;
 
-    //Funcion para definir las relaciones con los otros modelos
-    public function transacciones() 
-    {
-    return $this->hasMany(Transaccion::class);
+    protected $fillable = ['nombre', 'rol'];
 
+    // Relación con Transacciones (uno a muchos)
+    public function transacciones()
+    {
+        return $this->hasMany('App\Models\Transaccion');
     }
 }
