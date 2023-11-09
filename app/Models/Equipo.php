@@ -9,6 +9,9 @@ class Equipo extends Model
 {
     use HasFactory;
 
+    // Definir las opciones permitidas para el campo 'estado'
+    public static $estadosPermitidos = ['Prestado', 'Disponible', 'Perdido'];
+
     //Funcion para definir las relaciones con los otros modelos
     public function transacciones() {
 

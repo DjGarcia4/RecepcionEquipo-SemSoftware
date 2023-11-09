@@ -12,7 +12,7 @@ class EquipoController extends Controller
             "numero_serie" => 'required|string',
             "tipo_equipo" => 'required|string',
             "fecha_entrega" => 'required|date',
-            "estado" => 'required|string'
+            "estado" => 'required|in:Disponible,Prestado,Perdido'
         ]);
     }
 }
