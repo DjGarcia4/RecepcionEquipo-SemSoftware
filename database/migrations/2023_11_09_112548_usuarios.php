@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('rol'); // Puedes tener roles como 'estudiante', 'administrador', etc.
+            $table->string('numero_id');
+            $table->string('correo')->unique;
+            $table->string('contraseña');
+            $table->string('rol'); // Puedes tener roles como 'estudiante', 'administrador', coordinador.
             $table->timestamps();
         });
     }

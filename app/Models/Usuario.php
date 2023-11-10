@@ -9,7 +9,11 @@ class Usuario extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nombre', 'rol'];
+    protected $table = "usuarios"; //especifica el nombre de la tabla
+
+    public static $rolesPermitidos = ['Administrador', 'Coordinador', 'Estudiante'];
+
+    protected $fillable = ['nombre', 'numero_id', 'correo', 'contraseña', 'rol'];
 
     // Relación con Transacciones (uno a muchos)
     public function transacciones()

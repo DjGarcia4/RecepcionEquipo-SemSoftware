@@ -9,6 +9,10 @@ class Transaccion extends Model
 {
     use HasFactory;
 
+    protected $table = "transaccions"; //especifica el nombre de la tabla
+
+    public static $accionesPermitidos = ['Prestado', 'Disponible', 'Perdido'];
+
     protected $fillable = ['usuario_id', 'equipo_id', 'accion'];
 
     // Relación con Equipos (muchos a uno)

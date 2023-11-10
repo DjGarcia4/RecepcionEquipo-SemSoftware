@@ -9,8 +9,13 @@ class Equipo extends Model
 {
     use HasFactory;
 
+    protected $table = "equipos"; //especifica el nombre de la tabla
+
     // Definir las opciones permitidas para el campo 'estado'
     public static $estadosPermitidos = ['Prestado', 'Disponible', 'Perdido'];
+
+    // Definir las opciones permitidas para el campo 'Tipo de Equipo'
+    public static $equiposPermitidos = ['Computadora', 'Celular', 'Tablet'];
 
     protected $fillable = ['numero_serie', 'tipo_equipo', 'fecha_entrega', 'estado'];
 
