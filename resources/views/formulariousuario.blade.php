@@ -9,14 +9,29 @@
 </head>
 <body>
     <!--Creacion de usuario-->
-    <form action="{{route('formulariousuario.store')}}" method="post">
+    <h1 class="text-center bg-success text-white shadow">Fomulario Usuario</h1>
+    <div class="container p-4">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-sm-8 ">
+                <form class="card p-5 shadow" action="{{route('formulariousuario.store')}}" method="post">
         @csrf
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" required>
-        <label for="rol">Rol:</label>
-        <input type="text" name="rol" required>
-        <button type="submit">Guardar Usuario</button>
+        <div class="mb-3">
+            <label class="form-label"  for="nombre">Nombre</label>
+            <input class="form-control" type="text" name="nombre" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label"  for="rol">Rol</label>
+            <input class="form-control" type="text" name="rol" required>
+        </div>
+        <div class=" w-100 d-flex justify-content-center align-content-center">
+                <button type="submit" class="btn btn-success">Guardar Usuario</button>
+            </div>
+
     </form>
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
